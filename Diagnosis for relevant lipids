@@ -1,0 +1,15 @@
+fetch <rcsb_code>, <name>, async=0
+remove <name> and resn HOH
+select <name>_hetero, <name> and not polymer and not resn HOH
+iterate <name>_hetero, print(resn,resi,chain)
+
+''' example usage
+    fetch 2rh1, beta2AR, async=0
+    remove beta2AR and resn HOH
+    select beta2AR_hetero, beta2AR and not polymer and not resn HOH
+    iterate beta2AR_hetero, print(resn,resi,chain)'''
+
+# this is a diagnostic script to identify and list all non-protein molecules (ligands,ions,etc.) present in the receptor structure
+# inspect the output and decide which lipids you wish to see further in the final visualisation
+# this selection can be based on literature or on the specific project you are doing
+    
