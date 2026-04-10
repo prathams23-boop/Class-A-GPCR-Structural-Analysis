@@ -1,0 +1,28 @@
+bg_color white
+set ray_opaque_background, 1
+set antialias, 2
+set depth_cue, 1
+set fog_start, 0.45
+set ray_shadow, 1
+set cartoon_fancy_helices, 1
+set cartoon_smooth_loops, 1
+set cartoon_highlight_color, grey70
+set stick_radius, 0.15
+set sphere_scale, 0.35
+set label_size, 14
+set label_color, black
+
+
+fetch rcsb_code, name, async=0
+remove name and resn HOH
+show cartoon, name and polymer
+as cartoon, name
+color red,    name and ss h
+color yellow, name and ss s
+color grey70, name and ss l
+
+''' example usage: muOR
+    replace rcsb_code with 4dkl
+    replace name with muOR'''
+
+# Note down the locations of key domains such as TM1-7, ICL3, ECL2, helix-8, etc
