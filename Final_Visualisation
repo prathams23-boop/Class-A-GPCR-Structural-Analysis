@@ -1,0 +1,316 @@
+# block 1
+
+bg_color white
+set ray_opaque_background, 1
+set antialias, 2
+set depth_cue, 1
+set fog_start, 0.45
+set ray_shadow, 1
+set cartoon_fancy_helices, 1
+set cartoon_smooth_loops, 1
+set cartoon_highlight_color, grey70
+set stick_radius, 0.15
+set sphere_scale, 0.35
+set label_size, 14
+set label_color, black
+
+# block 2
+fetch 1u19, bRho,    async=0
+fetch 2rh1, beta2AR, async=0
+fetch 4dkl, muOR,    async=0
+fetch 3eml, A2AR,    async=0
+fetch 4djh, kappaOR, async=0
+
+# block 3
+remove bRho    and resn HOH
+remove beta2AR and resn HOH
+remove muOR    and resn HOH
+remove A2AR    and resn HOH
+remove kappaOR and resn HOH
+
+remove bRho    and resn HTG+NAG+MAN+BMA+HTO+ACE+HG+ZN
+remove beta2AR and resn SO4+BU1+ACM+GLC
+remove muOR    and resn SO4+MPG+CL
+remove A2AR    and resn SO4
+remove kappaOR and resn CIT+PEG
+
+hide everything
+
+# block 4
+show cartoon, bRho    and polymer
+show cartoon, beta2AR and polymer
+show cartoon, muOR    and polymer
+show cartoon, A2AR    and polymer
+show cartoon, kappaOR and polymer
+
+# block 5
+color marine,    bRho    and polymer
+color forest,    beta2AR and polymer
+color raspberry, muOR    and polymer
+color orange,    A2AR    and polymer
+color purple,    kappaOR and polymer
+
+# block 6
+select beta2AR_TM1, beta2AR and resi 30-64
+select beta2AR_TM2, beta2AR and resi 71-100
+select beta2AR_TM3, beta2AR and resi 107-139
+select beta2AR_TM4, beta2AR and resi 151-173
+select beta2AR_TM5, beta2AR and resi 200-225
+select beta2AR_TM6, beta2AR and resi 270-296
+select beta2AR_TM7, beta2AR and resi 306-309
+select beta2AR_H8,  beta2AR and resi 325-341
+
+select bRho_TM1, bRho and resi 29-60
+select bRho_TM2, bRho and resi 67-100
+select bRho_TM3, bRho and resi 106-136
+select bRho_TM4, bRho and resi 148-171
+select bRho_TM5, bRho and resi 197-229
+select bRho_TM6, bRho and resi 240-280
+select bRho_TM7, bRho and resi 290-312
+select bRho_H8,  bRho and resi 329-341
+
+select muOR_TM1, muOR and resi 65-97
+select muOR_TM2, muOR and resi 104-131
+select muOR_TM3, muOR and resi 142-170
+select muOR_TM4, muOR and resi 182-207
+select muOR_TM5, muOR and resi 235-264
+select muOR_TM6, muOR and resi 293-320
+select muOR_TM7, muOR and resi 328-349
+select muOR_H8,  muOR and resi 350-358
+
+select A2AR_TM1, A2AR and resi 9-38
+select A2AR_TM2, A2AR and resi 46-73
+select A2AR_TM3, A2AR and resi 79-107
+select A2AR_TM4, A2AR and resi 118-143
+select A2AR_TM5, A2AR and resi 198-230
+select A2AR_TM6, A2AR and resi 245-277
+select A2AR_TM7, A2AR and resi 283-304
+select A2AR_H8,  A2AR and resi 305-316
+
+select kappaOR_TM1, kappaOR and resi 64-96
+select kappaOR_TM2, kappaOR and resi 103-131
+select kappaOR_TM3, kappaOR and resi 139-171
+select kappaOR_TM4, kappaOR and resi 183-207
+select kappaOR_TM5, kappaOR and resi 238-266
+select kappaOR_TM6, kappaOR and resi 292-320
+select kappaOR_TM7, kappaOR and resi 326-348
+select kappaOR_H8,  kappaOR and resi 349-360
+
+# block 7
+color blue,        bRho_TM1    + beta2AR_TM1 + muOR_TM1 + A2AR_TM1 + kappaOR_TM1
+color cyan,        bRho_TM2    + beta2AR_TM2 + muOR_TM2 + A2AR_TM2 + kappaOR_TM2
+color green,       bRho_TM3    + beta2AR_TM3 + muOR_TM3 + A2AR_TM3 + kappaOR_TM3
+color yellow,      bRho_TM4    + beta2AR_TM4 + muOR_TM4 + A2AR_TM4 + kappaOR_TM4
+color orange,      bRho_TM5    + beta2AR_TM5 + muOR_TM5 + A2AR_TM5 + kappaOR_TM5
+color red,         bRho_TM6    + beta2AR_TM6 + muOR_TM6 + A2AR_TM6 + kappaOR_TM6
+color magenta,     bRho_TM7    + beta2AR_TM7 + muOR_TM7 + A2AR_TM7 + kappaOR_TM7
+color salmon,      bRho_H8     + beta2AR_H8  + muOR_H8  + A2AR_H8  + kappaOR_H8
+
+# block 8
+select bRho_PLM, bRho and resn PLM
+show sticks, bRho_PLM
+color yellow, bRho_PLM
+
+select bRho_retinal, bRho and resn RET
+show sticks, bRho_retinal
+color tv_red, bRho_retinal
+
+select bRho_lipids_all, bRho and resn PLM
+
+select beta2AR_CLR, beta2AR and resn CLR
+show sticks, beta2AR_CLR
+color yellow, beta2AR_CLR
+
+select beta2AR_PLM, beta2AR and resn PLM
+show sticks, beta2AR_PLM
+color orange, beta2AR_PLM
+
+select beta2AR_ligand, beta2AR and resn CAU
+show sticks, beta2AR_ligand
+color magenta, beta2AR_ligand
+
+select beta2AR_lipids_all, beta2AR and resn CLR+PLM
+
+select muOR_CLR, muOR and resn CLR
+show sticks, muOR_CLR
+color yellow, muOR_CLR
+
+select muOR_ligand, muOR and resn BF0
+show sticks, muOR_ligand
+color magenta, muOR_ligand
+
+select muOR_lipids_all, muOR and resn CLR
+
+select A2AR_STE, A2AR and resn STE
+show sticks, A2AR_STE
+color yellow, A2AR_STE
+
+select A2AR_ligand, A2AR and resn ZMA
+show sticks, A2AR_ligand
+color magenta, A2AR_ligand
+
+select A2AR_lipids_all, A2AR and resn STE
+
+select kappaOR_OLC, kappaOR and resn OLC
+show sticks, kappaOR_OLC
+color yellow, kappaOR_OLC
+
+select kappaOR_ligand, kappaOR and resn JDC
+show sticks, kappaOR_ligand
+color magenta, kappaOR_ligand
+
+select kappaOR_lipids_all, kappaOR and resn OLC
+
+select all_lipids, bRho_lipids_all + beta2AR_lipids_all + muOR_lipids_all + A2AR_lipids_all + kappaOR_lipids_all
+
+select all_ligands, (bRho and resn RET) or (beta2AR and resn CAU) or (muOR and resn BF0) or (A2AR and resn ZMA) or (kappaOR and resn JDC)
+
+# block 9
+select beta2AR_CCM, beta2AR and resi 155+158+164+166
+show sticks, beta2AR_CCM
+color tv_yellow, beta2AR_CCM
+
+# block 10
+# Each receptor's lipid contacts computed independently.
+# This is the correct approach — each receptor's lipids
+# only query that receptor's own protein residues.
+# These five receptors do not physically co-exist;
+# the alignment in Block 15 is visual only.
+
+select bRho_annular,    byres (bRho_lipids_all    expand 5.0) and bRho    and polymer and chain A
+select beta2AR_annular, byres (beta2AR_lipids_all expand 5.0) and beta2AR and polymer and chain A
+select muOR_annular,    byres (muOR_lipids_all    expand 5.0) and muOR    and polymer and chain A
+select A2AR_annular,    byres (A2AR_lipids_all    expand 5.0) and A2AR    and polymer and chain A
+select kappaOR_annular, byres (kappaOR_lipids_all expand 5.0) and kappaOR and polymer and chain A
+
+show sticks, bRho_annular
+show sticks, beta2AR_annular
+show sticks, muOR_annular
+show sticks, A2AR_annular
+show sticks, kappaOR_annular
+
+# block 11
+select bRho_PLM_contacts, byres (bRho_lipids_all expand 5.0) and bRho and polymer and chain A
+show sticks, bRho_PLM_contacts
+color limon, bRho_PLM_contacts
+print "=== bRho: residues contacting palmitic acid (PLM) ==="
+iterate bRho_PLM_contacts, print("  resi %s  resn %s" % (resi, resn))
+
+# block 12
+
+# Atom names verified by iterate on 2RH1 chain A:
+# Trp158 indole nitrogen = NE1 (standard amino acid naming)
+# Cholesterol hydroxyl oxygen = O1 (confirmed from iterate)
+# O3 does not exist in this structure — that was the error.
+
+# --- Step 1: final atom verification before measuring ---
+print "=== Confirming Trp158 NE1 ==="
+iterate beta2AR and resi 158 and name NE1 and chain A, print("  found: resi %s  resn %s  atom %s" % (resi, resn, name))
+# Must print exactly one line showing TRP 158 NE1
+# If nothing prints, run: iterate beta2AR and resi 158, print(name)
+# to find the exact nitrogen atom name in your structure
+
+print "=== Confirming CLR oxygen name = O1 ==="
+iterate beta2AR and resn CLR and name O1 and chain A, print("  found: resi %s  resn %s  atom %s" % (resi, resn, name))
+# Must print three lines — one for each CLR 412, 413, 414
+
+# --- Step 3: measure W158 NE1 to O1 of each cholesterol ---
+distance beta2AR_W158_to_CLR412, /beta2AR//A/158/NE1, /beta2AR//A/412/O1
+distance beta2AR_W158_to_CLR413, /beta2AR//A/158/NE1, /beta2AR//A/413/O1
+distance beta2AR_W158_to_CLR414, /beta2AR//A/158/NE1, /beta2AR//A/414/O1
+# CLR 412 = CCM site on TM4 — this should be the short one
+# CLR 413, 414 = TM1-TM2-H8 groove — these will be longer
+
+# --- Step 4: make lines visible ---
+color yellow, beta2AR_W158_to_CLR412
+color grey70, beta2AR_W158_to_CLR413
+color grey70, beta2AR_W158_to_CLR414
+set dash_width, 4
+set dash_radius, 0.08
+set label_size, 18
+
+# --- Step 5: zoom to see the full CCM interaction site ---
+zoom beta2AR and resi 155+158+164+166+412+413+414
+# This frames the CCM residues and all three cholesterols
+# together so all three distance lines are visible at once
+
+print "=== Block 12 complete ==="
+print "=== CLR 412 line is yellow  — expect ~3.2-4.0 A  ==="
+print "=== CLR 413 and 414 are grey — expect > 8 A      ==="
+
+# block 13
+# Polar contact sweep between beta2AR protein and lipids.
+# Identifies all potential hydrogen bonds and electrostatic
+# contacts between the receptor and its co-crystallised
+# cholesterol (CLR 412, 413, 414) and palmitic acid (PLM 415).
+#
+# Scientific basis: cholesterol has only one polar atom (O1,
+# the hydroxyl oxygen confirmed by iterate in Block 12).
+# Expecting few formal H-bonds — cholesterol binding is
+# primarily hydrophobic. The single Trp158-CLR412 contact
+# measured in Block 12 is likely the only formal H-bond.
+# Reference: Hanson et al. 2008, Structure 16:897
+
+# --- define selections explicitly on chain A only ---
+select beta2AR_protein_atoms, beta2AR and polymer and chain A
+select beta2AR_all_lipid_atoms, beta2AR and resn CLR+PLM and chain A
+
+# --- verify lipid polar atoms are present ---
+print "=== beta2AR lipid polar atoms (O and N only) ==="
+iterate beta2AR_all_lipid_atoms and elem O+N, print("  resi %s  resn %s  atom %s" % (resi, resn, name))
+# Expected output — verified by iterate on 2RH1 chain A:
+#   resi 412  resn CLR  atom O1  (cholesterol hydroxyl)
+#   resi 413  resn CLR  atom O1  (cholesterol hydroxyl)
+#   resi 414  resn CLR  atom O1  (cholesterol hydroxyl)
+#   resi 415  resn PLM  atom O2  (palmitic acid — single oxygen)
+# Note: PLM 415 has only one oxygen (O2), not a standard
+# carboxylate pair. Maximum possible H-bonds = 4.
+# If this prints correctly your selections are good.
+# If PLM oxygens do not appear, palmitic acid may use
+# different oxygen names — adjust elem filter accordingly.
+
+# --- primary measurement: formal hydrogen bonds at 3.5 A ---
+distance beta2AR_hbonds_3p5, beta2AR_protein_atoms, beta2AR_all_lipid_atoms, 3.5, mode=2
+color blue, beta2AR_hbonds_3p5
+set dash_width, 3
+set dash_radius, 0.06
+set label_size, 16
+
+# --- optional: weaker polar contacts at 4.5 A ---
+# Uncomment if you want to see CH...O type contacts as well
+# distance beta2AR_hbonds_4p5, beta2AR_protein_atoms, beta2AR_all_lipid_atoms, 4.5, mode=2
+# color cyan, beta2AR_hbonds_4p5
+
+# --- optional: full electrostatic range at 5.0 A ---
+# Uncomment to see all electrostatic interactions
+# distance beta2AR_hbonds_5p0, beta2AR_protein_atoms, beta2AR_all_lipid_atoms, 5.0, mode=2
+# color teal, beta2AR_hbonds_5p0
+
+# --- zoom to lipid region to see all lines ---
+zoom beta2AR and resn CLR+PLM
+# Centres the view on all lipid molecules so every
+# contact line is visible in the same frame
+
+print "=== Block 13 complete ==="
+print "=== Blue dashed lines = H-bonds within 3.5 A     ==="
+print "=== If only 1 line: confirms cholesterol binding  ==="
+print "=== is primarily hydrophobic with single H-bond   ==="
+print "=== anchor at Trp158 — consistent with Hanson 2008 ==="
+
+# block 14
+create bRho_surface_obj, bRho and polymer
+show surface, bRho_surface_obj
+spectrum b, blue_white_red, bRho_surface_obj
+set transparency, 0.4, bRho_surface_obj
+
+# block 15
+align beta2AR, bRho
+align muOR,    bRho
+align A2AR,    bRho
+
+# kappaOR is a homodimer — align chain A only against bRho
+# otherwise the dimer confuses the alignment algorithm
+
+create kappaOR_chainA, kappaOR and chain A
+align kappaOR_chainA, bRho
+
