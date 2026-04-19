@@ -1,0 +1,1 @@
+PyMOL pipeline for structural analysis of lipid–Class A GPCR interactions. Covers bRho, β2AR, μOR, A2AR, and κOR. Visualises TM helices, cholesterol binding sites, annular lipid shells, and contact measurements to support literature-based research.
